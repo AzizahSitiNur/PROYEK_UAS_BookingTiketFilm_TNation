@@ -13,7 +13,7 @@ class TicketController extends Controller
     public function showMalls(Movie $movie)
     {
         if (!auth()->check()) {
-            return redirect()->route('register'); // Redirect ke halaman register jika belum login
+            return redirect()->route('login'); // Redirect ke halaman register jika belum login
         }
 
         $malls = Mall::all();
