@@ -23,6 +23,6 @@ Route::get('/movies/{movie}/malls', [TicketController::class, 'showMalls'])->nam
 Route::get('/movies/{movie}/malls/{mall}/showtimes', [TicketController::class, 'showShowtimes'])->name('movies.showtimes');
 Route::get('/movies/{movie}/showtimes/{showtime}/seats', [TicketController::class, 'showSeats'])->name('movies.seats');
 Route::post('/showtimes/{showtime}/buy-ticket', [TicketController::class, 'buyTicket'])->name('showtimes.buy-ticket');
-Route::get('/tickets', [TicketController::class, 'showUserTickets'])->name('tickets.index');
+Route::get('/tickets', [TicketController::class, 'showUserTickets'])->name('user.tickets');
 Route::post('/tickets/{ticket}/refund', [TicketController::class, 'refundTicket'])->name('tickets.refund');
 require __DIR__.'/auth.php';

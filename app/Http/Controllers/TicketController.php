@@ -53,7 +53,7 @@ class TicketController extends Controller
         $ticket->user_id = auth()->id();
         $ticket->save();
 
-        return back()->with('success', 'Ticket booked successfully!');
+        return redirect()->route('user.tickets')->with('success', 'Ticket booked successfully!');
     }
 
     public function showUserTickets()
