@@ -35,7 +35,10 @@
                 @endforeach
             </div>
         </div>
-        <button type="submit" class="btn btn-primary">Buy Ticket</button>
+        <div class="button-group">
+            <a href="{{ route('home.index') }}" class="btn btn-success">Back to Home</a>
+            <button type="submit" class="btn btn-primary">Buy Ticket</button>
+        </div>
     </form>
 </div>
 
@@ -109,17 +112,32 @@
         color: white;
     }
     .btn-primary {
-        background-color: #007bff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 1em;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s;
-        border-radius: 4px;
+        background-color:rgb(1, 92, 190);
+        margin-top: 20px;
+        display: block;
+        width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 25px;
     }
     .btn-primary:hover {
-        background-color: #0056b3;
+        background-color:rgb(7, 127, 255);
+    }
+    .btn-success {
+      margin-top: 20px;
+      display: block;
+      width: 200px;
+      margin-left: auto;
+      margin-right: 5px;
+      border-radius: 25px;
+      background-color:rgb(135, 9, 9);
+    }
+    .btn-success:hover {
+        background-color:rgb(203, 10, 10);
+    }
+    .button-group {
+        display: flex;
+        gap: 10px; /* Memberikan jarak antara tombol */
     }
 </style>
 
