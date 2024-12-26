@@ -12,16 +12,17 @@ class TicketController extends Controller
 {
     public function showMalls(Movie $movie)
     {
+        if (!auth()->check()) {
+            return redirect()->route('register'); // Redirect ke halaman register jika belum login
+        }
+
         $malls = Mall::all();
+        $showtimesByMall = [];
 
-         $showtimesByMall = [];
-
-    foreach ($malls as $mall) {
-        $showtimes = Showtime::where('movie_id', $movie->id)
-                             ->where('mall_id', $mall->id)
-                             ->get();
-        $showtimesByMall[$mall->id] = $showtimes;
-    }
+        foreach ($malls as $mall) {
+            $showtimes = Showtime::where('movie_id', $movie->id)->where('mall_id', $mall->id)->get();
+            $showtimesByMall[$mall->id] = $showtimes;
+        }
     
         return view('movies.malls', compact('movie', 'malls','showtimesByMall'));
     }
