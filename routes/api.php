@@ -9,4 +9,4 @@ Route::get('/movies', [TicketApiController::class, 'getMovies']);
 Route::get('/movies/{movie}/malls/{mall}/showtimes', [TicketApiController::class, 'getShowtimes']);
 
 // Route untuk membeli tiket
-Route::post('/showtimes/{showtime}/buy', [TicketApiController::class, 'buyTicket']);
+Route::get('/showtimes/{showtime}/buy', [TicketApiController::class, 'buyTicket']);
